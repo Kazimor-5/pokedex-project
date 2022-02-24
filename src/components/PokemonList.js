@@ -34,6 +34,11 @@ const PokemonList = () => {
 
   return (
     <main className='container'>
+      {isLoading && (
+        <section className='loader'>
+          <div className='pokemon-loader'></div>
+        </section>
+      )}
       <h1 className='title main-title'>Pokedex</h1>
       <section className='pokemon-container'>
         {pokemons.map((pokemon, i) => {
@@ -43,11 +48,7 @@ const PokemonList = () => {
       <footer className='footer'>
         <ButtonUp />
       </footer>
-      {isLoading && (
-        <section className='loader'>
-          <div className='pokemon-loader'></div>
-        </section>
-      )}
+
       <div ref={loader}></div>
     </main>
   );
